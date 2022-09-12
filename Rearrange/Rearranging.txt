@@ -1,0 +1,32 @@
+function arranging(arr, n)
+{
+    let t = new Array(n);
+    let s = 0, l = n - 1;
+ 
+    let flag = true;
+
+    for (let i = 0; i < n; i++) {
+        if (flag)
+            t[i] = arr[l--];
+        else
+            t[i] = arr[s++];
+ 
+        flag = !flag;
+    }
+    for (let i = 0; i < n; i++)
+        arr[i] = t[i];
+}
+ 
+    let arr = [2,4,6,8,10];
+    let n = arr.length;
+ 
+    document.write("Original Array<br>");
+    for (let i = 0; i < n; i++)
+        document.write(arr[i] + " ");
+ 
+    arranging(arr, n);
+ 
+    document.write("<br>Modified Array<br>");
+    for (let i = 0; i < n; i++)
+        document.write(arr[i] + " ");
+ 
